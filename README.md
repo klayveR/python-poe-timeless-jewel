@@ -42,9 +42,11 @@ You may need to add Python, pip and tesseract to your PATH environment variable:
 - Choose `Path`, click `Edit...`
 - Click `New`, enter `C:\Python27`
 - Repeat the same for `C:\Python27\Scripts` and `C:\Program Files\Tesseract-OCR`
+
 *(You need to adjust these paths if you installed Python/Tesseract somewhere else)*
 
 If `install.cmd` or `run_capture.cmd` still don't work after that, you can replace
+
     - `pip` with `C:\Python27\Scripts\pip`
     - `python` with `C:\Python27\python`
 
