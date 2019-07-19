@@ -5,9 +5,10 @@ import time
 import os
 import json
 from sikuli.Sikuli import *
-from helpers import Helpers
 
 sys.path.append("scripts/")
+
+from helpers import Helpers
 
 # Sikuli settings
 Settings.MoveMouseDelay = 0
@@ -124,7 +125,7 @@ def start(event):
         print "None found, locating empty jewel socket..."
         result = locateEmptyJewel()
         if result:
-            jewel["id"] = int(time.time()) 
+            jewel["id"] = int(time.time())
             # Find nodes in radius, save node coordinates and type and capture passive text
             jewel["nodes"] = locateAllNodes()
             jewelDirectory = os.path.join(dirs["jewel"], str(jewel["id"]))
@@ -263,7 +264,7 @@ def isEmptyJewelInCorrectPosition():
     image = Pattern(images["jewel"]).similar(cfg["sim"]["jewel"])
     return regions["jewel"].exists(image)
 
-# Locates all nodes in the radius region, filters nodes outside of circle radius, filters jewel sockets 
+# Locates all nodes in the radius region, filters nodes outside of circle radius, filters jewel sockets
 # and highlights them to prevent them from being detected twice
 def locateAllNodes():
     global cfg
@@ -299,9 +300,9 @@ def saveNodeData(nodes, directory, id):
     jsonNodes = []
     for n in nodes:
         relativeCoords = Helpers.calcRelativeDistFromPoint(regions["jewel"].getCenter(), n["region"].getCenter(), cfg["radius"])
-        jsonNodes.append({ 
-            "x": relativeCoords[0], 
-            "y": relativeCoords[1],  
+        jsonNodes.append({
+            "x": relativeCoords[0],
+            "y": relativeCoords[1],
             "type": n["type"]
         })
 

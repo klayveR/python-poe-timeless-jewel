@@ -5,10 +5,10 @@
 - [Java Version 8 Update 221](https://java.com/en/download/manual.jsp) (64-bit)
 - [SikuliX 1.1.4](https://raiman.github.io/SikuliX1/downloads.html)
     - Jython interpreter 2.7.1
-    - sikulixapi.jar
+    - sikulix.jar
 
 # Installation
-1) Put the downloaded script contents, `jython-standalone-2.7.1.jar` and `sikulix.jar` into a new folder ([Like this](https://i.imgur.com/WfiUu1w.png))
+1) Put the downloaded script contents, `jython-standalone-2.7.1.jar` and `sikulix.jar` into a new folder ([Like this](https://i.imgur.com/TGdpbdD.png))
 2) Copy the file `poe` from `resource/tesseract` into your Tesseract configs folder, which is most likely located at `C:/Program Files/Tesseract-OCR/tessdata/configs`
 3) Run `install.cmd`
 
@@ -44,9 +44,13 @@ You may need to add Python, pip and tesseract to your PATH environment variable:
 
 *(You need to adjust these paths if you installed Python/Tesseract somewhere else)*
 
-If `install.cmd` or `run_capture.cmd` still don't work after that, you can replace
+### `install.cmd` or `run_analyzer.cmd` still don't work after that
 - `pip` with `C:\Python27\Scripts\pip`
 - `python` with `C:\Python27\python`
 
-**The "run_capture.cmd" does not work**
-Try downloading `sikulix.jar`, place it into the folder and run `run_capture_sikulix.cmd` instead.
+### `run_capture.cmd` does not work
+Try downloading `sikulixapi.jar`, place it into the folder and run `run_capture_api.cmd` instead. You may need to redownload the Jython interpreter 2.7.1 again.
+
+### The analyzer isn't doing anything
+- The analyzer will only do something if you captured jewels before. If the `data/jewel` and `data/timeless` folders are empty, it won't do anything.
+- Make sure you're using Python 2, Python 3 may not be compatible with this script.

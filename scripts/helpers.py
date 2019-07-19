@@ -1,8 +1,9 @@
 import os
 import json
 import sys
+import re
 
-class Helpers: 
+class Helpers:
     @staticmethod
     def doRectsOverlap(r1, r2):
         return r1.getX() + r1.getW() < r2.getX() or r1.getY() + r1.getH() < r2.getY() or r1.getX() > r2.getX() + r2.getW() or r1.getY() > r2.getY() + r2.getH()
