@@ -1,12 +1,13 @@
 import org.sikuli.script.SikulixForJython
 import math
 import sys
-sys.path.append("scripts/")
 import time
 import os
 import json
 from sikuli.Sikuli import *
-from captureHelpers import Helpers
+from helpers import Helpers
+
+sys.path.append("scripts/")
 
 # Sikuli settings
 Settings.MoveMouseDelay = 0
@@ -52,6 +53,7 @@ cfg = {
 
 dirs = {
     "images": os.path.join(os.getcwd(), "images"),
+    "data": os.path.join(os.getcwd(), "data"),
     "timeless": os.path.join(os.getcwd(), "data/timeless"),
     "jewel": os.path.join(os.getcwd(), "data/jewel"),
     "jewelDone": os.path.join(os.getcwd(), "data/jewel_done")
@@ -122,7 +124,7 @@ def start(event):
         print "None found, locating empty jewel socket..."
         result = locateEmptyJewel()
         if result:
-            jewel["id"] = int(time.time())
+            jewel["id"] = int(time.time()) 
             # Find nodes in radius, save node coordinates and type and capture passive text
             jewel["nodes"] = locateAllNodes()
             jewelDirectory = os.path.join(dirs["jewel"], str(jewel["id"]))
@@ -261,7 +263,7 @@ def isEmptyJewelInCorrectPosition():
     image = Pattern(images["jewel"]).similar(cfg["sim"]["jewel"])
     return regions["jewel"].exists(image)
 
-# Locates all nodes in the radius region, filters nodes outside of circle radius, filters jewel sockets
+# Locates all nodes in the radius region, filters nodes outside of circle radius, filters jewel sockets 
 # and highlights them to prevent them from being detected twice
 def locateAllNodes():
     global cfg
@@ -291,15 +293,15 @@ def saveNodeData(nodes, directory, id):
     global cfg
     global dirs
 
-    Helpers.createFolder(directory)
+    Helpers.createDirectory(directory)
     fullPath = os.path.join(directory, "data.json")
 
     jsonNodes = []
     for n in nodes:
         relativeCoords = Helpers.calcRelativeDistFromPoint(regions["jewel"].getCenter(), n["region"].getCenter(), cfg["radius"])
-        jsonNodes.append({
-            "x": relativeCoords[0],
-            "y": relativeCoords[1],
+        jsonNodes.append({ 
+            "x": relativeCoords[0], 
+            "y": relativeCoords[1],  
             "type": n["type"]
         })
 
@@ -315,7 +317,7 @@ def saveNodeData(nodes, directory, id):
 
 # Saves type, seed and variant of timeless jewel to a json file
 def saveTimelessJewelData(data, directory):
-    Helpers.createFolder(directory)
+    Helpers.createDirectory(directory)
     fullPath = os.path.join(directory, "data.json")
 
     newData = {
@@ -332,7 +334,7 @@ def saveTimelessJewelData(data, directory):
 def captureTextFromNodes(nodes, directory):
     global cfg
 
-    Helpers.createFolder(directory)
+    Helpers.createDirectory(directory)
 
     cnt = 0
     for n in nodes:
@@ -417,6 +419,9 @@ Env.addHotkey(Key.F3, 0, adjustZoom)
 Env.addHotkey(Key.F4, 0, end)
 
 if __name__ == '__main__':
+    for dir in dirs:
+        Helpers.createDirectory(dirs[dir])
+
     print "Loading captured jewels"
     capturedJewels = loadCapturedJewels()
 
