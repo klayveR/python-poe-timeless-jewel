@@ -44,5 +44,9 @@ You may need to add Python, pip and tesseract to your PATH environment variable:
 - Repeat the same for `C:\Python27\Scripts` and `C:\Program Files\Tesseract-OCR`
 *(You need to adjust these paths if you installed Python/Tesseract somewhere else)*
 
-**The "run_capture.cmd" does not work**    
+If `install.cmd` or `run_capture.cmd` still don't work after that, you can replace
+    - `pip` with `C:\Python27\Scripts\pip`
+    - `python` with `C:\Python27\python`
+
+**The "run_capture.cmd" does not work**
 Try downloading `sikulix.jar`, place it into the folder and run `run_capture_sikulix.cmd` instead.
