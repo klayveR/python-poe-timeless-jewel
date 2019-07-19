@@ -6,7 +6,7 @@ import json
 import shutil
 import Levenshtein
 
-dev = True
+dev = False
 jewels = {}
 data = {}
 dirs = {
@@ -210,7 +210,9 @@ def rectifyTimelessLines(lines, jewelInfo, tJewelInfo):
         # Militant Faith
         if tJewelInfo["type"] == "Militant Faith":
             if jewelInfo["type"] == "regular":
-                if jewelInfo["name"] in ["Strength", "Dexterity", "Intelligence"]:
+                # Check if it's a stat node and if it's a regular one (not a +15 regular)
+                if jewelInfo["name"] in ["Strength", "Dexterity", "Intelligence"] and \
+                any(x in jewelInfo["passives"] for x in ["+10 to Strength", "+10 to Dexterity", "+10 to Intelligence"]):
                     result["name"] = "Devotion"
                     result["passives"]["new"] = [ "+10 to Devotion" ]
                     result["passives"]["added"] = [ "+10 to Devotion" ]
@@ -365,7 +367,7 @@ def analyzeTimelessJewels(jewelsDir):
 
         # Remove folder with images
         if not dev:
-            shutil.rmtree(jewelDir)
+            shutil.rmtree(tJewelDir)
 
 
 if __name__ == '__main__':
