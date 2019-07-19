@@ -1,4 +1,5 @@
 
+
 # Requirements
 - Path of Exile in 1920x1080 borderless fullscreen
 - [Python 2.7.9](https://www.python.org/downloads/release/python-2716/) or higher
@@ -45,10 +46,11 @@ You may need to add Python, pip and tesseract to your PATH environment variable:
 
 *(You need to adjust these paths if you installed Python/Tesseract somewhere else)*
 
-If `install.cmd` or `run_analyze.cmd` still don't work after that, you can replace
+### `install.cmd` or `run_analyze.cmd` still don't work after that
 
+Replace
 - `pip` with `C:\Python27\Scripts\pip`
 - `python` with `C:\Python27\python`
 
-**The "run_capture.cmd" does not work**
+### `run_capture.cmd` does not work
 Try downloading `sikulix.jar`, place it into the folder and run `run_capture_sikulix.cmd` instead.
