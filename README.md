@@ -47,8 +47,8 @@ You may need to add Python, pip and tesseract to your PATH environment variable:
 
 If `install.cmd` or `run_capture.cmd` still don't work after that, you can replace
 
-    - `pip` with `C:\Python27\Scripts\pip`
-    - `python` with `C:\Python27\python`
+- `pip` with `C:\Python27\Scripts\pip`
+- `python` with `C:\Python27\python`
 
 **The "run_capture.cmd" does not work**
 Try downloading `sikulix.jar`, place it into the folder and run `run_capture_sikulix.cmd` instead.
