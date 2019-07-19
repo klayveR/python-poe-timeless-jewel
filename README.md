@@ -45,7 +45,7 @@ You may need to add Python, pip and tesseract to your PATH environment variable:
 
 *(You need to adjust these paths if you installed Python/Tesseract somewhere else)*
 
-If `install.cmd` or `run_capture.cmd` still don't work after that, you can replace
+If `install.cmd` or `run_analyze.cmd` still don't work after that, you can replace
 
 - `pip` with `C:\Python27\Scripts\pip`
 - `python` with `C:\Python27\python`
