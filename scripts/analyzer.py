@@ -151,13 +151,13 @@ def findAddedRandomMod(lines, passives):
     return matchingPassive
 
 def rectifyTimelessLines(lines, jewelInfo, tJewelInfo):
-    result = { 
-        "name": None, 
-        "passives": { 
-            "original": jewelInfo["passives"], 
-            "new": [], 
+    result = {
+        "name": None,
+        "passives": {
+            "original": jewelInfo["passives"],
+            "new": [],
             "added": []
-        } 
+        }
     }
 
     if jewelInfo["type"] == "keystone":
@@ -274,12 +274,12 @@ def analyzeJewels(jewelsDir):
         i = 0
         for lines in nodes:
             rectifiedLines = rectifyJewelLines(lines, jewelInfo[i])
-            result["nodes"].append({ 
+            result["nodes"].append({
                 "name": rectifiedLines["name"],
-                "x": jewelInfo[i]["x"], 
+                "x": jewelInfo[i]["x"],
                 "y": jewelInfo[i]["y"],
-                "type": jewelInfo[i]["type"], 
-                "passives": rectifiedLines["passives"] 
+                "type": jewelInfo[i]["type"],
+                "passives": rectifiedLines["passives"]
                 })
             i += 1
 
@@ -330,20 +330,14 @@ def analyzeTimelessJewels(jewelsDir):
         print ("Type:\t\t" + tJewelInfo["type"])
         print ("Seed:\t\t" + str(tJewelInfo["seed"]))
         print ("Variant:\t" + tJewelInfo["variant"])
-        print ("Jewel socket:\t" + jewelId)    
+        print ("Jewel socket:\t" + jewelId)
 
         # Convert all images into an array of string arrays
         nodes = imagesInDirToStrings(tJewelDir)
 
-        #with open(os.path.join(dirs["resource"], "READTEXT.json"), 'w') as f:
-        #    json.dump(nodes, f, indent=4, sort_keys=True)
-
-        #with open("C:/Users/Tobias Hoffmann/Desktop/JewelReader/resource/READTEXT.json") as jsonFile:
-        #    nodes = json.load(jsonFile)
-
         result = {
             "info": {
-                "socket": jewelInfo["socket"], 
+                "socket": jewelInfo["socket"],
                 "seed": tJewelInfo["seed"],
                 "type": tJewelInfo["type"],
                 "variant": tJewelInfo["variant"],
@@ -352,15 +346,15 @@ def analyzeTimelessJewels(jewelsDir):
         i = 0
         for lines in nodes:
             rectifiedLines = rectifyTimelessLines(lines, jewelInfo["nodes"][i], tJewelInfo)
-            result["nodes"].append({ 
+            result["nodes"].append({
                 "name": {
                     "original": jewelInfo["nodes"][i]["name"],
                     "new": rectifiedLines["name"]
                 },
-                "x": jewelInfo["nodes"][i]["x"], 
+                "x": jewelInfo["nodes"][i]["x"],
                 "y": jewelInfo["nodes"][i]["y"],
-                "type": jewelInfo["nodes"][i]["type"], 
-                "passives": rectifiedLines["passives"] 
+                "type": jewelInfo["nodes"][i]["type"],
+                "passives": rectifiedLines["passives"]
                 })
             i += 1
 
