@@ -1,5 +1,4 @@
 # Requirements
-- Path of Exile in 1920x1080 borderless fullscreen
 - [Python 2.7.16](https://www.python.org/downloads/release/python-2716/)
 - [Tesseract 5.0.0](https://github.com/UB-Mannheim/tesseract/wiki)
 - [Java Version 8 Update 221](https://java.com/en/download/manual.jsp) (64-bit)
@@ -7,8 +6,11 @@
     - Jython interpreter 2.7.1
     - sikulix.jar
 
+You need to be able to run Path of Exile in borderless fullscreen in `1920x1080` resolution.    
+Python, pip and tesseract need to be in your `PATH` environment variable. Click [here](#adjust-path-environment-variable) to learn how to do this.
+
 # Installation
-1) Put the downloaded script contents, `jython-standalone-2.7.1.jar` and `sikulix.jar` into a new folder ([Like this](https://i.imgur.com/TGdpbdD.png))
+1) Put the downloaded project, `jython-standalone-2.7.1.jar` and `sikulix.jar` into a new folder ([Like this](https://i.imgur.com/TGdpbdD.png))
 2) Copy the file `poe` from `resource/tesseract` into your Tesseract configs folder, which is most likely located at `C:/Program Files/Tesseract-OCR/tessdata/configs`
 3) Run `install.cmd`
 
@@ -37,7 +39,7 @@ You can open `viewer.html` in your browser, select the `.json` files from the `r
 	- Close your inventory
 
 # Troubleshoot
-You may need to add Python, pip and tesseract to your PATH environment variable:
+### Adjust `PATH` environment variable
 - Open `Edit the system environment variables`
 - Click `Environment Variables...` in the window that pops up
 - Choose `Path`, click `Edit...`
@@ -47,6 +49,8 @@ You may need to add Python, pip and tesseract to your PATH environment variable:
 *(You need to adjust these paths if you installed Python/Tesseract somewhere else)*
 
 ### `install.cmd` or `run_analyzer.cmd` still don't work after that
+Replace the following in both scripts:
+
 - `pip` with `C:\Python27\Scripts\pip`
 - `python` with `C:\Python27\python`
 
