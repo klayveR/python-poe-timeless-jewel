@@ -26,7 +26,9 @@ You can press `F4` to stop the script.
 After you captured some jewels, they need to be analyzed, because right after capturing them they're basically only screenshots of the passive skill tree. To do that, run `run_analyzer.cmd`. You don't need to do anything during this part, this script will automatically analyze everything. Once it's finished, you can find the analyzed jewels in the `result/` folder.
 
 ### Viewing jewels
-You can open `viewer.html` in your browser, select the result `.json`-files and display the jewels in a readable format.
+You can open `viewer.html` in your browser, select the `.json` files from the `result/` folder and display the jewels in a readable format.
+
+<img width="‭384‬" height="216" src="https://i.imgur.com/j5KhuyF.png">
 
 ### Tips
 - When capturing jewels

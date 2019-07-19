@@ -30,7 +30,7 @@ $(function () {
                             <td><a href="javascript:;" onclick="changeTable('${file.name}')">${json.info.type}</a></td>
                             <td>${json.info.seed}</td>
                             <td>${json.info.variant}</td>
-                            <td>${json.info.socket.name} (${json.info.socket.index})</td>
+                            <td>${json.info.socket.name} <span class="node-type">(ID: ${json.info.socket.index})</span></td>
                         </tr>
                         `)
                     }
@@ -50,9 +50,10 @@ function changeTable(file) {
     let json = jewels[file];
 
     $(".jewel-info .name").html(`${json.info.type}<br />`)
-    $(".jewel-info .info").html(`Seed ${json.info.seed}, ${json.info.variant}, ${json.info.socket.name} (${json.info.socket.index})`)
+    $(".jewel-info .info").html(`Seed ${json.info.seed}, ${json.info.variant}, ${json.info.socket.name} <span class="node-type">(ID: ${json.info.socket.index})</span>`)
 
     $("#jewelNodes").empty()
+    drawNodes(json["nodes"])
     for (const nodeIndex in json["nodes"]) {
         const node = json["nodes"][nodeIndex]
 
@@ -69,5 +70,50 @@ function changeTable(file) {
         row += `<td><span class="original-name">${node.name.original}</span> <span class="node-type">(${node.type})</span><br />
                 ${node.passives.original.join("<br />")}</td></tr>`
         $("#jewelNodes").append(row)
+    }
+}
+
+function drawNodes(nodes) {
+    const canvas = $("#canvas");
+    canvas.show()
+    const ctx = canvas[0].getContext("2d");
+
+    const shrinkFactor = 2.5
+    const notableSize = parseInt(14 / shrinkFactor)
+    const regularSize = parseInt(9 / shrinkFactor)
+    
+    const w = parseInt($("#selector").width() / shrinkFactor);
+    canvas.attr("height", w + 'px');
+    canvas.attr("width", w + 'px');
+
+    const center = parseInt(canvas.width() / 2)
+
+    ctx.beginPath();
+    ctx.arc(center, center, notableSize, 0, 2 * Math.PI);
+    ctx.fillStyle = "#f05f33";
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(center, center, center, 0, 2 * Math.PI);
+    ctx.strokeStyle = "lightgrey";
+    ctx.stroke();
+
+    console.log(nodes)
+    for(const nodeIndex in nodes) {
+        node = nodes[nodeIndex]
+        x = parseInt(center + (node["x"] * center))
+        y = parseInt(center + (node["y"] * center))
+
+        radius = regularSize
+        fillStyle = "grey"
+        if(node["type"] == "notable") {
+            radius = notableSize
+            fillStyle = "#33C3F0"
+        }
+
+        ctx.beginPath();
+        ctx.arc(x, y, radius, 0, 2 * Math.PI);
+        ctx.fillStyle = fillStyle;
+        ctx.fill();
     }
 }

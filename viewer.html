@@ -18,13 +18,14 @@
 <body>
     <div class="container" style="margin-top: 10px">
         <div class="row">
-            <div class="three columns">
+            <div class="three columns" id="selector">
                 <input type="file" id="jsonFiles" name="files[]" multiple style="display:none" />
                 <a class="button button-primary" href="javascript:;" id="jsonSelect">Select all JSON result files</a>
                 <div class="jewel-info">
                     <span class="name"></span>
                     <span class="info"></span>
                 </div>
+                <canvas id="canvas" style="display:none"></canvas>
                 <table class="u-full-width">
                     <thead>
                         <tr>
@@ -36,7 +37,7 @@
                     </thead>
                     <tbody id="jewelsTable">
                     </tbody>
-                </table>
+                </table><br />
             </div>
             <div class="nine columns">
                 <table class="u-full-width">
