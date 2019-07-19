@@ -102,3 +102,11 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# custom
+bugs
+*.jar
+result/*
+data/*
+scripts/*.class
+scripts/*.pyc

@@ -1,0 +1,60 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Timeless Jewel Viewer</title>
+    <meta name="author" content="klayveR">
+
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container" style="margin-top: 10px">
+        <div class="row">
+            <div class="three columns">
+                <input type="file" id="jsonFiles" name="files[]" multiple style="display:none" />
+                <a class="button button-primary" href="javascript:;" id="jsonSelect">Select all JSON result files</a>
+                <div class="jewel-info">
+                    <span class="name"></span>
+                    <span class="info"></span>
+                </div>
+                <table class="u-full-width">
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Seed</th>
+                            <th>Variant</th>
+                            <th>Socket</th>
+                        </tr>
+                    </thead>
+                    <tbody id="jewelsTable">
+                    </tbody>
+                </table>
+            </div>
+            <div class="nine columns">
+                <table class="u-full-width">
+                    <thead>
+                        <tr>
+                            <th>Passives</th>
+                            <th id="original-passives">Original Passives</th>
+                        </tr>
+                    </thead>
+                    <tbody id="jewelNodes">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="js/viewer.js"></script>
+</body>
+
+</html>

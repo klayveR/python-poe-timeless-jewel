@@ -1,0 +1,38 @@
+td {
+    vertical-align: top !important;
+}
+
+.new-name {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.original-name {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.node-type {
+    font-size: 11px;
+    color: grey;
+    text-transform: capitalize;
+}
+
+.added-mod {
+    color: #90c75a;
+}
+
+.jewel-info {
+    margin: 10px 0px;
+}
+
+.jewel-info .name {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.jewel-info .info {
+    font-size: 12px;
+    color: grey;
+}

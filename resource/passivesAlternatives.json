@@ -1,0 +1,961 @@
+{
+    "Ancient Hex": {
+        "passives": [
+            "(10-15)% increased Effect of Curse", 
+            "Curse Skills have 20% increased Skill Effect Duration"
+        ], 
+        "type": "notable"
+    }, 
+    "Area Damage": {
+        "passives": [
+            "(7-12)% increased Area Damage"
+        ], 
+        "type": "regular"
+    }, 
+    "Area of Effect": {
+        "passives": [
+            "(4-7)% increased Area of Effect"
+        ], 
+        "type": "regular"
+    }, 
+    "Armour": {
+        "passives": [
+            "(7-12)% increased Armour"
+        ], 
+        "type": "regular"
+    }, 
+    "Attack Damage": {
+        "passives": [
+            "(7-12)% increased Attack Damage"
+        ], 
+        "type": "regular"
+    }, 
+    "Attack Dodge": {
+        "passives": [
+            "1% chance to Dodge Attack Hits"
+        ], 
+        "type": "regular"
+    }, 
+    "Attack Speed": {
+        "passives": [
+            "(3-4)% increased Attack Speed"
+        ], 
+        "type": "regular"
+    }, 
+    "Aura Effect": {
+        "passives": [
+            "(3-5)% increased Aura effect"
+        ], 
+        "type": "regular"
+    }, 
+    "Automaton Studies": {
+        "passives": [
+            "(30-40)% increased Armour", 
+            "(3-4)% additional Physical Damage Reduction"
+        ], 
+        "type": "notable"
+    }, 
+    "Axiom Warden": {
+        "passives": [
+            "80% increased Minion Maximum Life"
+        ], 
+        "type": "notable"
+    }, 
+    "Baleful Augmentation": {
+        "passives": [
+            "+50% to Lightning Resistance"
+        ], 
+        "type": "notable"
+    }, 
+    "Block": {
+        "passives": [
+            "+1% Chance to Block Attack Damage"
+        ], 
+        "type": "regular"
+    }, 
+    "Blood-Quenched Bulwark": {
+        "passives": [
+            "+5% Chance to Block Attack Damage", 
+            "+(6-10) Life gained when you Block"
+        ], 
+        "type": "notable"
+    }, 
+    "Bloody Flowers Rebellion": {
+        "passives": [
+            "80% increased Cold Damage with Attack Skills"
+        ], 
+        "type": "notable"
+    }, 
+    "Bloody Savagery": {
+        "passives": [
+            "(25-35)% increased Physical Damage", 
+            "Bleeding inflicted by this Skill deals Damage 10% faster"
+        ], 
+        "type": "notable"
+    }, 
+    "Brutal Execution": {
+        "passives": [
+            "+40% to Critical Strike Multiplier"
+        ], 
+        "type": "notable"
+    }, 
+    "Calming Devotion": {
+        "passives": [
+            "15% of Physical Damage Converted to Cold Damage while you have at least 150 Devotion"
+        ], 
+        "type": "notable"
+    }, 
+    "Cast Speed": {
+        "passives": [
+            "(2-3)% increased Cast Speed"
+        ], 
+        "type": "regular"
+    }, 
+    "Chaos Damage": {
+        "passives": [
+            "(7-12)% increased Chaos Damage"
+        ], 
+        "type": "regular"
+    }, 
+    "Chaos Resistance": {
+        "passives": [
+            "+(6-10)% to Chaos Resistance"
+        ], 
+        "type": "regular"
+    }, 
+    "Chitus' Heart": {
+        "passives": [
+            "80% increased Lightning Damage with Attack Skills"
+        ], 
+        "type": "notable"
+    }, 
+    "City Walls": {
+        "passives": [
+            "+8% Chance to Block Attack Damage"
+        ], 
+        "type": "notable"
+    }, 
+    "Cloistered": {
+        "passives": [
+            "Immune to Elemental Ailments while on Consecrated Ground if you have at least 150 Devotion"
+        ], 
+        "type": "notable"
+    }, 
+    "Cold Damage": {
+        "passives": [
+            "(7-12)% increased Cold Damage"
+        ], 
+        "type": "regular"
+    }, 
+    "Cold Resistance": {
+        "passives": [
+            "+(9-14)% to Cold Resistance"
+        ], 
+        "type": "regular"
+    }, 
+    "Commanding Presence": {
+        "passives": [
+            "(10-15)% increased Aura effect", 
+            "20% increased Aura Area of Effect"
+        ], 
+        "type": "notable"
+    }, 
+    "Construct Studies": {
+        "passives": [
+            "(30-40)% increased Evasion Rating", 
+            "(5-7)% chance to Blind enemies on hit"
+        ], 
+        "type": "notable"
+    }, 
+    "Corrupted Soul": {
+        "passives": [
+            "50% of Non-Chaos Damage taken bypasses Energy Shield", 
+            "Gain 20% of Maximum Life as Extra Maximum Energy Shield"
+        ], 
+        "type": "keystone"
+    }, 
+    "Crematorium Worker": {
+        "passives": [
+            "+50% to Fire Resistance"
+        ], 
+        "type": "notable"
+    }, 
+    "Critical Strike Chance": {
+        "passives": [
+            "(7-14)% increased Critical Strike Chance"
+        ], 
+        "type": "regular"
+    }, 
+    "Critical Strike Multiplier": {
+        "passives": [
+            "+(6-10)% to Critical Strike Multiplier"
+        ], 
+        "type": "regular"
+    }, 
+    "Cult of Chaos": {
+        "passives": [
+            "+(13-19)% to Chaos Resistance", 
+            "+1% to maximum Chaos Resistance"
+        ], 
+        "type": "notable"
+    }, 
+    "Cult of Fire": {
+        "passives": [
+            "+(20-30)% to Fire Resistance", 
+            "+1% to maximum Fire Resistance"
+        ], 
+        "type": "notable"
+    }, 
+    "Cult of Ice": {
+        "passives": [
+            "+(20-30)% to Cold Resistance", 
+            "+1% to maximum Cold Resistance"
+        ], 
+        "type": "notable"
+    }, 
+    "Cult of Lightning": {
+        "passives": [
+            "+(20-30)% to Lightning Resistance", 
+            "+1% to maximum Lightning Resistance"
+        ], 
+        "type": "notable"
+    }, 
+    "Curse Effect": {
+        "passives": [
+            "(3-5)% increased Effect of Curse"
+        ], 
+        "type": "regular"
+    }, 
+    "Damage Over Time": {
+        "passives": [
+            "(7-12)% increased Damage over Time"
+        ], 
+        "type": "regular"
+    }, 
+    "Dance with Death": {
+        "passives": [
+            "Can't use Helmets", 
+            "Your Critical Strike Chance is Lucky", 
+            "Your Damage with Critical Strikes is Lucky", 
+            "Enemies' Damage with Critical Strikes against you is Lucky"
+        ], 
+        "type": "keystone"
+    }, 
+    "Devotion": {
+        "passives": [
+            "+10 to Devotion"
+        ], 
+        "type": "regular1"
+    }, 
+    "Dialla's Wit": {
+        "passives": [
+            "15% increased Cast Speed"
+        ], 
+        "type": "notable"
+    }, 
+    "Discerning Taste": {
+        "passives": [
+            "40% increased Rarity of Items found"
+        ], 
+        "type": "notable"
+    }, 
+    "Divine Flesh": {
+        "passives": [
+            "All Damage taken bypasses Energy Shield", 
+            "50% of Elemental Damage taken as Chaos Damage", 
+            "+10% to maximum Chaos Resistance"
+        ], 
+        "type": "keystone"
+    }, 
+    "Enduring Faith": {
+        "passives": [
+            "+1 to Minimum Endurance Charges while you have at least 150 Devotion"
+        ], 
+        "type": "notable"
+    }, 
+    "Energy Flow Studies": {
+        "passives": [
+            "(8-12)% increased maximum Energy Shield", 
+            "(10-15)% increased Energy Shield Recharge rate"
+        ], 
+        "type": "notable"
+    }, 
+    "Energy Shield": {
+        "passives": [
+            "(3-5)% increased maximum Energy Shield"
+        ], 
+        "type": "regular"
+    }, 
+    "Eternal Adaptiveness": {
+        "passives": [
+            "8% increased Evasion Rating per Frenzy Charge"
+        ], 
+        "type": "notable"
+    }, 
+    "Eternal Bloodlust": {
+        "passives": [
+            "10% increased Damage per Frenzy Charge"
+        ], 
+        "type": "notable"
+    }, 
+    "Eternal Dominance": {
+        "passives": [
+            "10% increased Damage per Endurance Charge"
+        ], 
+        "type": "notable"
+    }, 
+    "Eternal Exploitation": {
+        "passives": [
+            "10% increased Damage per Power Charge"
+        ], 
+        "type": "notable"
+    }, 
+    "Eternal Fervour": {
+        "passives": [
+            "10% chance to gain a Frenzy Charge on Hit"
+        ], 
+        "type": "notable"
+    }, 
+    "Eternal Fortitude": {
+        "passives": [
+            "8% increased Armour per Endurance Charge"
+        ], 
+        "type": "notable"
+    }, 
+    "Eternal Resilience": {
+        "passives": [
+            "Gain an Endurance Charge every second if you've been Hit Recently"
+        ], 
+        "type": "notable"
+    }, 
+    "Eternal Separation": {
+        "passives": [
+            "4% increased Energy Shield per Power Charge"
+        ], 
+        "type": "notable"
+    }, 
+    "Eternal Subjugation": {
+        "passives": [
+            "15% chance to gain a Power Charge on Critical Strike"
+        ], 
+        "type": "notable"
+    }, 
+    "Eternal Youth": {
+        "passives": [
+            "50% less Life Regeneration Rate", 
+            "50% less maximum Total Recovery per Second from Life Leech", 
+            "Energy Shield Recharge instead applies to Life"
+        ], 
+        "type": "keystone"
+    }, 
+    "Evasion": {
+        "passives": [
+            "(7-12)% increased Evasion Rating"
+        ], 
+        "type": "regular"
+    }, 
+    "Exquisite Pain": {
+        "passives": [
+            "(25-35)% increased Damage over Time", 
+            "(7-11)% increased Skill Effect Duration"
+        ], 
+        "type": "notable"
+    }, 
+    "Fire Damage": {
+        "passives": [
+            "(7-12)% increased Fire Damage"
+        ], 
+        "type": "regular"
+    }, 
+    "Fire Resistance": {
+        "passives": [
+            "+(9-14)% to Fire Resistance"
+        ], 
+        "type": "regular"
+    }, 
+    "Flawless Execution": {
+        "passives": [
+            "80% increased Critical Strike Chance"
+        ], 
+        "type": "notable"
+    }, 
+    "Flesh Worship": {
+        "passives": [
+            "(6-10)% increased maximum Life", 
+            "0.4% of Attack Damage Leeched as Life"
+        ], 
+        "type": "notable"
+    }, 
+    "Flesh to Flames": {
+        "passives": [
+            "(25-35)% increased Fire Damage", 
+            "10% of Physical Damage Converted to Fire Damage"
+        ], 
+        "type": "notable"
+    }, 
+    "Flesh to Frost": {
+        "passives": [
+            "(25-35)% increased Cold Damage", 
+            "10% of Physical Damage Converted to Cold Damage"
+        ], 
+        "type": "notable"
+    }, 
+    "Flesh to Lightning": {
+        "passives": [
+            "(25-35)% increased Lightning Damage", 
+            "10% of Physical Damage Converted to Lightning Damage"
+        ], 
+        "type": "notable"
+    }, 
+    "Freeze Chance": {
+        "passives": [
+            "(3-6)% chance to Freeze enemies"
+        ], 
+        "type": "regular"
+    }, 
+    "Frenzied Faith": {
+        "passives": [
+            "+1 to Minimum Power Charges while you have at least 150 Devotion"
+        ], 
+        "type": "notable"
+    }, 
+    "Freshly Brewed": {
+        "passives": [
+            "20% increased Flask Effect Duration"
+        ], 
+        "type": "notable"
+    }, 
+    "Gemling Ambush": {
+        "passives": [
+            "Supported Skills have 80% increased Spell Critical Strike Chance"
+        ], 
+        "type": "notable"
+    }, 
+    "Gemling Inquisition": {
+        "passives": [
+            "80% increased Spell Damage"
+        ], 
+        "type": "notable"
+    }, 
+    "Gemling Training": {
+        "passives": [
+            "80% increased Physical Damage"
+        ], 
+        "type": "notable"
+    }, 
+    "Geofri's End": {
+        "passives": [
+            "50% increased Damage with Bleeding", 
+            "Bleeding inflicted by this Skill deals Damage 10% faster"
+        ], 
+        "type": "notable"
+    }, 
+    "Glancing Blows": {
+        "passives": [
+            "Chance to Block Attack Damage is doubled", 
+            "Chance to Block Spell Damage is doubled", 
+            "You take 50% of Damage from Blocked Hits"
+        ], 
+        "type": "keystone"
+    }, 
+    "Gleaming Legion": {
+        "passives": [
+            "80% increased Armour"
+        ], 
+        "type": "notable"
+    }, 
+    "Heated Devotion": {
+        "passives": [
+            "15% of Physical Damage Converted to Fire Damage while you have at least 150 Devotion"
+        ], 
+        "type": "notable"
+    }, 
+    "Hierarchy": {
+        "passives": [
+            "(25-35)% increased Minion Damage", 
+            "(15-20)% increased Minion Maximum Life"
+        ], 
+        "type": "notable"
+    }, 
+    "Ignite Chance": {
+        "passives": [
+            "(3-6)% chance to Ignite enemies"
+        ], 
+        "type": "regular"
+    }, 
+    "Inner Conviction": {
+        "passives": [
+            "Inner Conviction"
+        ], 
+        "type": "keystone"
+    }, 
+    "Intolerance of Sin": {
+        "passives": [
+            "+1% to all maximum Resistances if you have at least 150 Devotion"
+        ], 
+        "type": "notable"
+    }, 
+    "Jungle Paths": {
+        "passives": [
+            "4% chance to Dodge Attack Hits", 
+            "(8-10)% chance to Avoid being Stunned"
+        ], 
+        "type": "notable"
+    }, 
+    "Laureate": {
+        "passives": [
+            "50% increased Mana Regeneration Rate"
+        ], 
+        "type": "notable"
+    }, 
+    "Legacy of the Vaal": {
+        "passives": [
+            ""
+        ], 
+        "type": "notable"
+    }, 
+    "Life": {
+        "passives": [
+            "(2-4)% increased maximum Life"
+        ], 
+        "type": "regular"
+    }, 
+    "Lightning Damage": {
+        "passives": [
+            "(7-12)% increased Lightning Damage"
+        ], 
+        "type": "regular"
+    }, 
+    "Lightning Resistance": {
+        "passives": [
+            "+(9-14)% to Lightning Resistance"
+        ], 
+        "type": "regular"
+    }, 
+    "Lioneye's Focus": {
+        "passives": [
+            "80% increased Projectile Attack Damage"
+        ], 
+        "type": "notable"
+    }, 
+    "Mana": {
+        "passives": [
+            "(4-6)% increased maximum Mana"
+        ], 
+        "type": "regular"
+    }, 
+    "Mana Regeneration": {
+        "passives": [
+            "(12-17)% increased Mana Regeneration Rate"
+        ], 
+        "type": "regular"
+    }, 
+    "Martyr's Might": {
+        "passives": [
+            "5% additional Physical Damage Reduction while you have at least 150 Devotion"
+        ], 
+        "type": "notable"
+    }, 
+    "Might of the Vaal": {
+        "passives": [
+            ""
+        ], 
+        "type": "notable"
+    }, 
+    "Minion Damage": {
+        "passives": [
+            "(8-13)% increased Minion Damage"
+        ], 
+        "type": "regular"
+    }, 
+    "Movement Speed": {
+        "passives": [
+            "(2-3)% increased Movement Speed"
+        ], 
+        "type": "regular"
+    }, 
+    "Night of a Thousand Ribbons": {
+        "passives": [
+            "80% increased Fire Damage with Attack Skills"
+        ], 
+        "type": "notable"
+    }, 
+    "Physical Damage": {
+        "passives": [
+            "(7-12)% increased Physical Damage"
+        ], 
+        "type": "regular"
+    }, 
+    "Pooled Resources": {
+        "passives": [
+            "30% increased maximum Mana"
+        ], 
+        "type": "notable"
+    }, 
+    "Power of Purpose": {
+        "passives": [
+            "80% of Maximum Mana is Converted to twice that much Armour"
+        ], 
+        "type": "keystone"
+    }, 
+    "Powerful Faith": {
+        "passives": [
+            "+1 to Minimum Frenzy Charges while you have at least 150 Devotion"
+        ], 
+        "type": "notable"
+    }, 
+    "Price of Glory": {
+        "passives": [
+            ""
+        ], 
+        "type": "regular"
+    }, 
+    "Projectile Damage": {
+        "passives": [
+            "(7-12)% increased Projectile Damage"
+        ], 
+        "type": "regular"
+    }, 
+    "Projectile Speed": {
+        "passives": [
+            "(7-12)% increased Projectile Speed"
+        ], 
+        "type": "regular"
+    }, 
+    "Purity Rebel": {
+        "passives": [
+            "6% chance to Dodge Spell Hits"
+        ], 
+        "type": "notable"
+    }, 
+    "Revitalising Darkness": {
+        "passives": [
+            "(25-35)% increased Chaos Damage", 
+            "0.2% of Chaos Damage Leeched as Life"
+        ], 
+        "type": "notable"
+    }, 
+    "Revitalising Flames": {
+        "passives": [
+            "(25-35)% increased Fire Damage", 
+            "0.2% of Fire Damage Leeched as Life"
+        ], 
+        "type": "notable"
+    }, 
+    "Revitalising Frost": {
+        "passives": [
+            "(25-35)% increased Cold Damage", 
+            "0.2% of Cold Damage Leeched as Life"
+        ], 
+        "type": "notable"
+    }, 
+    "Revitalising Lightning": {
+        "passives": [
+            "(25-35)% increased Lightning Damage", 
+            "0.2% of Lightning Damage Leeched as Life"
+        ], 
+        "type": "notable"
+    }, 
+    "Revitalising Winds": {
+        "passives": [
+            "(25-35)% increased Physical Damage", 
+            "0.2% of Physical Damage Leeched as Life"
+        ], 
+        "type": "notable"
+    }, 
+    "Rigwald's Might": {
+        "passives": [
+            "80% increased Melee Physical Damage"
+        ], 
+        "type": "notable"
+    }, 
+    "Rites of Lunaris": {
+        "passives": [
+            "30% increased Effect of Chill"
+        ], 
+        "type": "notable"
+    }, 
+    "Rites of Solaris": {
+        "passives": [
+            "50% chance to Avoid being Chilled"
+        ], 
+        "type": "notable"
+    }, 
+    "Ritual of Flesh": {
+        "passives": [
+            "(6-10)% increased maximum Life", 
+            "(0.7-1.2)% of maximum Life regenerated per second"
+        ], 
+        "type": "notable"
+    }, 
+    "Ritual of Immolation": {
+        "passives": [
+            "(25-35)% increased Fire Damage", 
+            "Penetrates (2-4)% Fire Resistance"
+        ], 
+        "type": "notable"
+    }, 
+    "Ritual of Memory": {
+        "passives": [
+            "(17-23)% increased maximum Mana", 
+            "(15-25)% increased Mana Regeneration Rate"
+        ], 
+        "type": "notable"
+    }, 
+    "Ritual of Might": {
+        "passives": [
+            "(25-35)% increased Physical Damage", 
+            "(2-4)% chance to deal Double Damage"
+        ], 
+        "type": "notable"
+    }, 
+    "Ritual of Shadows": {
+        "passives": [
+            "(25-35)% increased Chaos Damage", 
+            "25% chance to inflict Withered for 2 seconds on Hit"
+        ], 
+        "type": "notable"
+    }, 
+    "Ritual of Stillness": {
+        "passives": [
+            "(25-35)% increased Cold Damage", 
+            "Penetrates (2-4)% Cold Resistance"
+        ], 
+        "type": "notable"
+    }, 
+    "Ritual of Thunder": {
+        "passives": [
+            "(25-35)% increased Lightning Damage", 
+            "Penetrates (2-4)% Lightning Resistance"
+        ], 
+        "type": "notable"
+    }, 
+    "Robust Diet": {
+        "passives": [
+            "10% increased maximum Life"
+        ], 
+        "type": "notable"
+    }, 
+    "Rural Life": {
+        "passives": [
+            "50% chance to Avoid being Shocked"
+        ], 
+        "type": "notable"
+    }, 
+    "Sceptre Pinnacle": {
+        "passives": [
+            "8% Chance to Block Spell Damage"
+        ], 
+        "type": "notable"
+    }, 
+    "Second Sight": {
+        "passives": [
+            "You are Blind", 
+            "Blind does not affect your Light Radius", 
+            "25% more Melee Critical Strike Chance while Blinded"
+        ], 
+        "type": "keystone"
+    }, 
+    "Secret Tunnels": {
+        "passives": [
+            "6% chance to Dodge Attack Hits"
+        ], 
+        "type": "notable"
+    }, 
+    "Shadowy Streets": {
+        "passives": [
+            "80% increased Evasion Rating"
+        ], 
+        "type": "notable"
+    }, 
+    "Shock Chance": {
+        "passives": [
+            "(3-6)% chance to Shock enemies"
+        ], 
+        "type": "regular"
+    }, 
+    "Skill Duration": {
+        "passives": [
+            "(4-7)% increased Skill Effect Duration"
+        ], 
+        "type": "regular"
+    }, 
+    "Slum Lord": {
+        "passives": [
+            "80% increased Minion Damage"
+        ], 
+        "type": "notable"
+    }, 
+    "Smite the Heretical": {
+        "passives": [
+            "10% chance to inflict Lightning Exposure on Hit if you have at least 150 Devotion"
+        ], 
+        "type": "notable"
+    }, 
+    "Smite the Ignorant": {
+        "passives": [
+            "10% chance to inflict Cold Exposure on Hit if you have at least 150 Devotion"
+        ], 
+        "type": "notable"
+    }, 
+    "Smite the Wicked": {
+        "passives": [
+            "10% chance to inflict Fire Exposure on Hit if you have at least 150 Devotion"
+        ], 
+        "type": "notable"
+    }, 
+    "Soul Worship": {
+        "passives": [
+            "(8-12)% increased maximum Energy Shield", 
+            "0.3% of Spell Damage Leeched as Energy Shield"
+        ], 
+        "type": "notable"
+    }, 
+    "Spell Block": {
+        "passives": [
+            "1% Chance to Block Spell Damage"
+        ], 
+        "type": "regular"
+    }, 
+    "Spell Damage": {
+        "passives": [
+            "(7-12)% increased Spell Damage"
+        ], 
+        "type": "regular"
+    }, 
+    "Spell Dodge": {
+        "passives": [
+            "1% chance to Dodge Spell Hits"
+        ], 
+        "type": "regular"
+    }, 
+    "Street Urchin": {
+        "passives": [
+            "+50% to Cold Resistance"
+        ], 
+        "type": "notable"
+    }, 
+    "Strength of Blood": {
+        "passives": [
+            "Recovery from Life Leech is not applied", 
+            "1% less Damage taken for every 2% Recovery per second from Life Leech"
+        ], 
+        "type": "keystone"
+    }, 
+    "Superiority": {
+        "passives": [
+            "15% increased Aura effect"
+        ], 
+        "type": "notable"
+    }, 
+    "Supreme Decadence": {
+        "passives": [
+            "Life Recovery from Flasks also applies to Energy Shield", 
+            "30% less Life Recovery from Flasks"
+        ], 
+        "type": "keystone"
+    }, 
+    "Supreme Ego": {
+        "passives": [
+            "You can only have one Aura on you from your Skills", 
+            "Your Aura Skills do not affect Allies", 
+            "50% more Effect of Auras from your Skills on you", 
+            "50% more Mana Reserved"
+        ], 
+        "type": "keystone"
+    }, 
+    "Supreme Grandstanding": {
+        "passives": [
+            "Nearby Allies and Enemies Share Charges with you", 
+            "Enemies Hitting you have 10% chance to gain an Endurance, ", 
+            "Frenzy or Power Charge"
+        ], 
+        "type": "keystone"
+    }, 
+    "Tempered by War": {
+        "passives": [
+            "50% of Cold and Lightning Damage taken as Fire Damage", 
+            "50% less Cold Resistance", 
+            "50% less Lightning Resistance"
+        ], 
+        "type": "keystone"
+    }, 
+    "Temple Paths": {
+        "passives": [
+            "4% chance to Dodge Spell Hits", 
+            "+(8-10)% to all Elemental Resistances"
+        ], 
+        "type": "notable"
+    }, 
+    "Thaumaturgical Aptitude": {
+        "passives": [
+            "(25-35)% increased Spell Damage", 
+            "Supported Skills have (35-50)% increased Spell Critical Strike Chance"
+        ], 
+        "type": "notable"
+    }, 
+    "Thaumaturgical Protection": {
+        "passives": [
+            "5% Chance to Block Spell Damage", 
+            "(20-30)% increased Defences from Equipped Shield"
+        ], 
+        "type": "notable"
+    }, 
+    "The Agnostic": {
+        "passives": [
+            "Maximum Energy Shield is 0", 
+            "While not on Full Life, Sacrifice 20% of Mana per Second to Recover that much Life"
+        ], 
+        "type": "keystone"
+    }, 
+    "Thoughts and Prayers": {
+        "passives": [
+            "Gain 5% of Maximum Mana as Extra Maximum Energy Shield while you have at least 150 Devotion"
+        ], 
+        "type": "notable"
+    }, 
+    "Thundrous Devotion": {
+        "passives": [
+            "15% of Physical Damage Converted to Lightning Damage while you have at least 150 Devotion"
+        ], 
+        "type": "notable"
+    }, 
+    "Virtue Gem Surgery": {
+        "passives": [
+            "30% increased Effect of Shock"
+        ], 
+        "type": "notable"
+    }, 
+    "Voll's Coup": {
+        "passives": [
+            "15% increased Attack Speed"
+        ], 
+        "type": "notable"
+    }, 
+    "War Games": {
+        "passives": [
+            "25% increased Accuracy Rating"
+        ], 
+        "type": "notable"
+    }, 
+    "Wind Dancer": {
+        "passives": [
+            "20% less Damage taken if you haven't been Hit Recently", 
+            "40% less Evasion Rating if you haven't been Hit Recently", 
+            "20% more Evasion Rating if you've been Hit Recently"
+        ], 
+        "type": "keystone"
+    }, 
+    "With Eyes Open": {
+        "passives": [
+            "+37% to Chaos Resistance"
+        ], 
+        "type": "notable"
+    }, 
+    "Zealot": {
+        "passives": [
+            "Gain Arcane Surge on Hit with Spells if you have at least 150 Devotion"
+        ], 
+        "type": "notable"
+    }
+}

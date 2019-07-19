@@ -1,0 +1,149 @@
+[
+    {
+        "name": "DuelistLeft",
+        "passives": [
+            "Battle Rouse",
+            "Battle Cry"
+        ]
+    },
+    {
+        "name": "DuelistBelow",
+        "passives": [
+            "Master of the Arena",
+            "Disciple of the Slaughter"
+        ]
+    },
+    {
+        "name": "DuelistRight",
+        "passives": [
+            "Art of the Gladiator",
+            "Profane Chemistry"
+        ]
+    },
+    {
+        "name": "PointBlank",
+        "passives": [
+            "Twin Terrors",
+            "Feller of Foes"
+        ]
+    },
+    {
+        "name": "MarauderBelow",
+        "passives": [
+            "Dynamo",
+            "Steelwood Stance"
+        ]
+    },
+    {
+        "name": "MarauderLeft",
+        "passives": [
+            "Skull Cracking",
+            "Solidity"
+        ]
+    },
+    {
+        "name": "ResoluteTechnique",
+        "passives": [
+            "Smashing Strikes",
+            "Arsonist"
+        ]
+    },
+    {
+        "name": "IronGrip",
+        "passives": [
+            "Executioner",
+            "Dismembering"
+        ]
+    },
+    {
+        "name": "TemplarLeft",
+        "passives": [
+            "Smashing Strikes",
+            "Singular Focus"
+        ]
+    },
+    {
+        "name": "RangerAbove",
+        "passives": [
+            "Thrill Killer",
+            "Revenge of the Hunted"
+        ]
+    },
+    {
+        "name": "RangerRight",
+        "passives": [
+            "Gemini",
+            "Flash Freeze"
+        ]
+    },
+    {
+        "name": "Acrobatics",
+        "passives": [
+            "Survivalist",
+            "Soul Raker"
+        ]
+    },
+    {
+        "name": "ShadowRight",
+        "passives": [
+            "Fatal Toxins",
+            "Claws of the Falcon"
+        ]
+    },
+    {
+        "name": "ScionBelow",
+        "passives": [
+            "Hired Killer",
+            "Battle Rouse"
+        ]
+    },
+    {
+        "name": "ScionLeft",
+        "passives": [
+            "Path of the Warrior",
+            "Gravepact"
+        ]
+    },
+    {
+        "name": "ScionRight",
+        "passives": [
+            "Exceptional Performance",
+            "Destructive Apparatus"
+        ]
+    },
+    {
+        "name": "WitchLeft",
+        "passives": [
+            "Shamanistic Fury",
+            "Ash, Frost and Storm"
+        ]
+    },
+    {
+        "name": "WitchRight",
+        "passives": [
+            "Destructive Apparatus",
+            "Crackling Speed"
+        ]
+    },
+    {
+        "name": "ChaosInoculation",
+        "passives": [
+            "Throatseeker",
+            "Hasty Reconstruction"
+        ]
+    },
+    {
+        "name": "MinionInstability",
+        "passives": [
+            "Holy Fire",
+            "Unnatural Calm"
+        ]
+    },
+    {
+        "name": "WitchAbove",
+        "passives": [
+            "Cruel Preparation",
+            "Blast Cascade"
+        ]
+    }
+]
