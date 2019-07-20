@@ -2,15 +2,14 @@ let jewels = {}
 
 $(function () {
     if (window.File && window.FileReader && window.FileList && window.Blob) {
-        // Great success! All the File APIs are supported.
+        // File API works
     } else {
         alert('The File APIs are not fully supported in this browser.');
     }
 
     $('#jsonFiles').change(function () {
-        const files = document.getElementById("jsonFiles").files; // FileList object
+        const files = document.getElementById("jsonFiles").files;
 
-        // Loop through the FileList and render image files as thumbnails.
         for (var i = 0, f; f = files[i]; i++) {
             if (!f.type.match('application/json')) {
                 continue;
@@ -18,7 +17,6 @@ $(function () {
 
             const reader = new FileReader();
 
-            // Closure to capture the file information.
             reader.onload = (function (file) {
                 return function (e) {
                     jsonEncoded = e.target.result.split(",")[1]
