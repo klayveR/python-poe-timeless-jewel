@@ -128,7 +128,6 @@ def start(event):
             jewel["id"] = int(time.time())
             # Find nodes in radius, save node coordinates and type and capture passive text
             jewel["nodes"] = locateAllNodes()
-            return
             jewelDirectory = os.path.join(dirs["jewel"], str(jewel["id"]))
             captureTextFromNodes(jewel["nodes"], jewelDirectory)
             mouseMove(Location(100, 100))
