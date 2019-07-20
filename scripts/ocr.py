@@ -16,7 +16,7 @@ class OCR:
     def getFilteredImage(imgPath):
         src = cv2.imread(imgPath)
         srcH, srcW = src.shape[:2]
-        src = cv2.resize(src, (int(srcW * 2), int(srcH * 2)))
+        src = cv2.resize(src, (int(srcW * 1.5), int(srcH * 1.5)))
 
         # HSV thresholding to get rid of as much background as possible
         hsv = cv2.cvtColor(src.copy(), cv2.COLOR_BGR2HSV)

@@ -24,7 +24,6 @@ $(function () {
                     jsonEncoded = e.target.result.split(",")[1]
                     json = JSON.parse(atob(jsonEncoded))
                     if(!jewels.hasOwnProperty(file.name)) {
-                        jewels[file.name] = json
                         $("#jewelsTable").append(`
                         <tr>
                             <td><a href="javascript:;" onclick="changeTable('${file.name}')">${json.info.type}</a></td>
@@ -34,6 +33,7 @@ $(function () {
                         </tr>
                         `)
                     }
+                    jewels[file.name] = json // Update json
                 };
             })(f);
 

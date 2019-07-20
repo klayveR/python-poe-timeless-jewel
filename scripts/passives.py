@@ -67,20 +67,35 @@ url = "https://poedb.tw/us/json.php/Legion/AlternatePassiveAdditions"
 response = requests.get(url)
 data = json.loads(response.content)
 
+vaalData = []
 newData = []
 
 for passive in data["data"]:
-    if passive[0] == "Vaal":
-        continue
     mod = re.search("<span class='item_magic'>(.*)<\/span>", passive[2]).group(1)
     mod = mod.replace("</span>", "")
     mod = mod.replace("<span class='mod-value'>", "").encode('ascii','ignore')
+    mod = mod.replace("increased Effect of Curse", "increased Effect of your Curses")
+    mod = mod.replace("increased Aura effect", "increased Effect of Non-Curse Auras from your Skills")
+    mod = mod.replace("increased Aura Area of Effect", "increased Area of Effect of Aura Skills")
+    mod = mod.replace("&ndash;", "-")
 
-    if not mod in newData:
-        newData.append(mod)
+    if "increased Minion Damage" in mod:
+        mod = mod.replace("increased Minion Damage", "increased Damage")
+        mod = "Minions deal " + mod
+
+    if passive[0] == "Vaal":
+        if not mod in vaalData:
+            mod = mod.replace("1%", "(1-1)%")
+            vaalData.append(mod)
+    else:
+        if not mod in newData:
+            newData.append(mod)
 
 with open("resource/passivesAdditions.json", 'w') as f:
     json.dump(newData, f, indent=4, sort_keys=True)
+
+with open("resource/passivesVaalAdditions.json", 'w') as f:
+    json.dump(vaalData, f, indent=4, sort_keys=True)
 
 ### ALTERNATE PASSIVES ###
 
@@ -122,6 +137,9 @@ for passive in data["data"]:
         if "<a class=" in m:
             continue
         m = m.replace("&ndash;", "-")
+        m = m.replace("increased Effect of Curse", "increased Effect of your Curses")
+        m = m.replace("increased Aura effect", "increased Effect of Non-Curse Auras from your Skills")
+        m = m.replace("increased Aura Area of Effect", "increased Area of Effect of Aura Skills")
         actualModsList.append(m)
 
     newData[name] = { "type": type, "passives": actualModsList }

@@ -19,7 +19,7 @@ Settings.DebugLogs = False
 # Global variables
 cfg = {
     "title": "Skill Capture",
-    "radius": 426,
+    "radius": 427,
     "offsets": {
         "regular": 8,
         "notable": 12,
@@ -139,6 +139,8 @@ def start(event):
 
     # If jewel region has been defined
     if regions["jewel"]:
+        inCorrectPosition = isEmptyJewelInCorrectPosition()
+
         # If jewel data hasn't been extracted yet
         if jewel["seed"] == 0:
             Env.setClipboard("")
@@ -152,7 +154,14 @@ def start(event):
                 jewel["variant"] = data["variant"]
                 popup("Successfully extracted Timeless Jewel data.\n\nPlease socket the Timeless Jewel and start the procedure.\n\nMake sure to not move the passive skill tree, otherwise the script will attempt to find the a new jewel position.", cfg["title"])
             else:
-                popup("Couldn't extract Timeless Jewel data.\n\nPlease open your inventory, hover over the jewel you want to analyze and press F2.\n\nMake sure to not move the passive skill tree, otherwise the script will attempt to find the a new jewel position.", cfg["title"])
+                if inCorrectPosition:
+                    popup("Couldn't extract Timeless Jewel data.\n\nPlease open your inventory, hover over the jewel you want to analyze and press F2.\n\nMake sure to not move the passive skill tree, otherwise the script will attempt to find the a new jewel position.", cfg["title"])
+                else:
+                    popup("The jewel socket can't be found at its previous location anymore.\n\nThe script will look for the new position next time.\nMake sure you haven't socketed a jewel into your target socket.", cfg["title"])
+                    regions["jewel"] = None
+                    jewel["nodes"] = []
+                    jewel["seed"] = 0
+                    return
             return
 
         # If jewel is socketed, read nodes
@@ -166,7 +175,7 @@ def start(event):
             return
 
         # If jewel is not socketed but empty socket is still in correct position
-        if isEmptyJewelInCorrectPosition():
+        if inCorrectPosition:
             popup("Please socket the timeless jewel into the jewel socket.", cfg["title"])
         else:
             popup("The jewel socket can't be found at its previous location anymore.\n\nThe script will look for the new position next time.\nMake sure you haven't socketed a jewel into your target socket.", cfg["title"])

@@ -22,7 +22,10 @@ jsonFiles = {
     "passives": os.path.join(dirs["resource"], "passives.json"),
     "passivesAlt": os.path.join(dirs["resource"], "passivesAlternatives.json"),
     "passivesAdd": os.path.join(dirs["resource"], "passivesAdditions.json"),
+    "passivesVaalAdd": os.path.join(dirs["resource"], "passivesVaalAdditions.json"),
 }
+valuePattern = "\(([\d.]+)-([\d.]+)\)"
+valueRegex = re.compile(valuePattern)
 
 def imagesInDirToStrings(dir):
     files = Helpers.getFilesByExtFromDir(dir, ".png")
@@ -97,7 +100,23 @@ def determinePassiveName(lines, passives):
         lineIndex += 1
     return result
 
-def getPassiveWithValue(lines, passive, values):
+def replacePassiveValue(line, passive, acceptAny = False):
+    match = valueRegex.search(passive)
+    if match:
+        valueMatch = re.search("[\d.]+", line)
+        value = float(match.group(1))
+        if valueMatch:
+            foundValue = float(valueMatch.group(0))
+            # If found value is in range
+            if (foundValue >= float(match.group(1)) and foundValue <= float(match.group(2))) or acceptAny:
+                value = foundValue
+                if value.is_integer():
+                    value = int(value)
+        passive = re.sub(valuePattern, str(value), passive)
+    
+    return passive
+
+def getPassiveWithValue(lines, passive):
     bestRatio = 0.0
     passiveIndex = -1
     lineIndex = 0
@@ -109,15 +128,8 @@ def getPassiveWithValue(lines, passive, values):
 
         lineIndex += 1
 
-    valueMatch = re.search("\d+", lines[passiveIndex])
-    value = int(values.group(1))
-    if valueMatch:
-        foundValue = int(valueMatch.group(0))
-        # If found value is in range
-        if value >= int(values.group(1)) and value <= int(values.group(2)):
-            value = foundValue
+    passive = replacePassiveValue(lines[passiveIndex], passive)
 
-    passive = re.sub('\((\d+)-(\d+)\)', str(value), passive)
     return passive
 
 def rectifyJewelLines(lines, jewelInfo):
@@ -141,14 +153,18 @@ def rectifyJewelLines(lines, jewelInfo):
 def findAddedRandomMod(lines, passives):
     bestRatio = 0.0
     matchingPassive = None
+    matchingLineIndex = -1
+    lineIndex = len(lines) - 1
     for line in reversed(lines):
         for passive in passives:
             ratio = Levenshtein.ratio(passive, line)
             if ratio > bestRatio:
+                matchingLineIndex = lineIndex
                 matchingPassive = passive
                 bestRatio = ratio
+        lineIndex -= 1
 
-    return matchingPassive
+    return { "passive": matchingPassive, "line": matchingLineIndex, "ratio": bestRatio }
 
 def rectifyTimelessLines(lines, jewelInfo, tJewelInfo):
     result = {
@@ -163,10 +179,9 @@ def rectifyTimelessLines(lines, jewelInfo, tJewelInfo):
     if jewelInfo["type"] == "keystone":
         pass
     else:
-        pattern = re.compile("\((\d+)-(\d+)\)")
         # Lethal Pride
         if tJewelInfo["type"] == "Lethal Pride":
-            passiveToAdd = findAddedRandomMod(lines, data["passivesAdd"])
+            passiveToAdd = findAddedRandomMod(lines, data["passivesAdd"])["passive"]
             result["name"] = jewelInfo["name"]
             result["passives"]["new"] = jewelInfo["passives"] + [ passiveToAdd ]
             result["passives"]["added"] = [ passiveToAdd ]
@@ -174,7 +189,7 @@ def rectifyTimelessLines(lines, jewelInfo, tJewelInfo):
 
         # Brutal Restraint
         if tJewelInfo["type"] == "Brutal Restraint":
-            passiveToAdd = findAddedRandomMod(lines, data["passivesAdd"])
+            passiveToAdd = findAddedRandomMod(lines, data["passivesAdd"])["passive"]
             result["name"] = jewelInfo["name"]
             result["passives"]["new"] = jewelInfo["passives"] + [ passiveToAdd ]
             result["passives"]["added"] = [ passiveToAdd ]
@@ -197,15 +212,28 @@ def rectifyTimelessLines(lines, jewelInfo, tJewelInfo):
         if tJewelInfo["type"] == "Glorious Vanity":
             name = determinePassiveName(lines, data["passivesAlt"])
             result["name"] = name["name"]
-            passives = data["passivesAlt"][name["name"]]["passives"]
-            for p in passives:
-                passive = p
-                match = pattern.search(passive)
-                if match:
-                    passive = getPassiveWithValue(lines, passive, match)
-                result["passives"]["new"].append(passive)
-                result["passives"]["added"].append(passive)
-            return result
+            if name["name"] == "Might of the Vaal":
+                passives = []
+                while True:
+                    foundMod = findAddedRandomMod(lines, data["passivesVaalAdd"])
+                    if foundMod["ratio"] > 0.8:
+                        line = lines[foundMod["line"]]
+                        passive = replacePassiveValue(line, foundMod["passive"], True)
+                        passives.append(passive)
+                        del lines[foundMod["line"]]
+                        if len(lines) == 0:
+                            break
+                    else:
+                        break
+                result["passives"]["new"] = passives
+                result["passives"]["added"] = passives
+            else:
+                passives = data["passivesAlt"][name["name"]]["passives"]
+                for p in passives:
+                    passive = getPassiveWithValue(lines, p)
+                    result["passives"]["new"].append(passive)
+                    result["passives"]["added"].append(passive)
+                return result
 
         # Militant Faith
         if tJewelInfo["type"] == "Militant Faith":
@@ -261,7 +289,6 @@ def analyzeJewels(jewelsDir):
         if jewelId in jewels:
             continue
 
-        print ("-------------------------------------")
         print ("Analyzing jewel socket '" + jewelId + "'")
 
         # Read data that was saved from capturing
@@ -327,7 +354,6 @@ def analyzeTimelessJewels(jewelsDir):
         with open(os.path.join(tJewelDir, "data.json")) as jsonFile:
             tJewelInfo = json.load(jsonFile)
 
-        print ("-------------------------------------")
         print ("Analyzing Timeless Jewel '" + timelessId + "'")
         print ("Type:\t\t" + tJewelInfo["type"])
         print ("Seed:\t\t" + str(tJewelInfo["seed"]))

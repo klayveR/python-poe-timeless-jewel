@@ -1,7 +1,7 @@
 {
     "Ancient Hex": {
         "passives": [
-            "(10-15)% increased Effect of Curse", 
+            "(10-15)% increased Effect of your Curses", 
             "Curse Skills have 20% increased Skill Effect Duration"
         ], 
         "type": "notable"
@@ -44,7 +44,7 @@
     }, 
     "Aura Effect": {
         "passives": [
-            "(3-5)% increased Aura effect"
+            "(3-5)% increased Effect of Non-Curse Auras from your Skills"
         ], 
         "type": "regular"
     }, 
@@ -155,8 +155,8 @@
     }, 
     "Commanding Presence": {
         "passives": [
-            "(10-15)% increased Aura effect", 
-            "20% increased Aura Area of Effect"
+            "(10-15)% increased Effect of Non-Curse Auras from your Skills", 
+            "20% increased Area of Effect of Aura Skills"
         ], 
         "type": "notable"
     }, 
@@ -222,7 +222,7 @@
     }, 
     "Curse Effect": {
         "passives": [
-            "(3-5)% increased Effect of Curse"
+            "(3-5)% increased Effect of your Curses"
         ], 
         "type": "regular"
     }, 
@@ -844,7 +844,7 @@
     }, 
     "Superiority": {
         "passives": [
-            "15% increased Aura effect"
+            "15% increased Effect of Non-Curse Auras from your Skills"
         ], 
         "type": "notable"
     }, 
