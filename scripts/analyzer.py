@@ -315,9 +315,9 @@ def analyzeJewels(jewelsDir):
         # Determine jewel socket
         result["socket"] = determineJewelSocket(result["nodes"])
 
-        if jewelInfo["socket"]["index"] == -1:
-            print "\nWarning!\nThe jewel socket for this jewel couldn't be determined. Make sure every node in the jewel radius is fully visible when capturing.\n"
-            print "If you want to recapture this jewel, you have to delete " + os.path.join(dirs["jewelDone"], str(jewelId) + ".png")
+        #if jewelInfo["socket"]["index"] == -1:
+        #    print "\nWarning!\nThe jewel socket for this jewel couldn't be determined. Make sure every node in the jewel radius is fully visible when capturing.\n"
+        #    print "If you want to recapture this jewel, you have to delete " + os.path.join(dirs["jewelDone"], str(jewelId) + ".png")
 
         # Write jewels results to global var
         jewels[jewelId] = result
