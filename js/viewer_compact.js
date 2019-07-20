@@ -91,7 +91,10 @@ function changeTable(file) {
         }
     }
 
+    
+
     withoutDuplicates = removeDuplicates(combinedPassives, "passive")
+    withoutDuplicates.sort((a,b) => (a.value < b.value) ? 1 : ((b.value < a.value) ? -1 : 0));
 
     let lists = ["", ""];
     let currentList = 0;
@@ -102,10 +105,8 @@ function changeTable(file) {
 
         lists[currentList] += `${name}<br />`
 
-        if(currentList >= lists.length - 1) {
-            currentList = 0;
-        } else {
-            currentList++;
+        if(i >= withoutDuplicates.length / 2) {
+            currentList = 1;
         }
     }
 
