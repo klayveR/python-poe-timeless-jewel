@@ -52,23 +52,65 @@ function changeTable(file) {
 
     $("#jewelNodes").empty()
     drawNodes(json["nodes"])
+
+    let allPassives = []
+    // Extract all added passives
     for (const nodeIndex in json["nodes"]) {
         const node = json["nodes"][nodeIndex]
 
-        row = `<tr>`
-
-        if(node.passives.original.every(v => node.passives.new.includes(v))) {
-            row += `<td><span class="new-name">${node.name.new}</span> <span class="node-type">(${node.type})</span><br />
-                    ${node.passives.original.join("<br />")}<br /><span class="added-mod">${node.passives.added.join("<br />")}</span></td>`
-        } else {
-            row += `<td><span class="new-name">${node.name.new}</span> <span class="node-type">(${node.type})</span><br />
-                    <span class="added-mod">${node.passives.new.join("<br />")}</span></td>`
+        for(const p in node.passives.added) {
+            allPassives.push(node.passives.added[p])
         }
-
-        row += `<td><span class="original-name">${node.name.original}</span> <span class="node-type">(${node.type})</span><br />
-                ${node.passives.original.join("<br />")}</td></tr>`
-        $("#jewelNodes").append(row)
     }
+
+    let combinedPassives = []
+    const pattern = /([\d.]+)/
+    for (const i in allPassives) {
+        const passive = allPassives[i]
+        const match = passive.match(pattern)
+
+        if(match) {
+            let totalValue = parseFloat(match[1]);
+            const passiveNoValue = passive.replace(match[1], "[V]")
+
+            for (const j in allPassives) {
+                const otherPassive = allPassives[j]
+                const otherMatch = otherPassive.match(pattern)
+
+                if(otherMatch) {
+                    const otherPassiveNoValue = otherPassive.replace(otherMatch[1], "[V]")
+                    if(passiveNoValue == otherPassiveNoValue && i != j) {
+                        totalValue += parseFloat(otherMatch[1]);
+                    }
+                }   
+            }
+
+            finalPassive = passiveNoValue.replace("[V]", totalValue)
+
+            combinedPassives.push({ "passive": passiveNoValue, "value": totalValue })
+        }
+    }
+
+    withoutDuplicates = removeDuplicates(combinedPassives, "passive")
+
+    let lists = ["", ""];
+    let currentList = 0;
+    
+    for(const i in withoutDuplicates) {
+        const obj = withoutDuplicates[i]
+        const name = obj.passive.replace("[V]", obj.value)
+
+        lists[currentList] += `${name}<br />`
+
+        if(currentList >= lists.length - 1) {
+            currentList = 0;
+        } else {
+            currentList++;
+        }
+    }
+
+    let row = `<tr><td class="compact-list">${lists[0]}</td><td class="compact-list">${lists[1]}</td></tr>`
+    $("#jewelNodes").append(row)
 }
 
 function drawNodes(nodes) {
@@ -113,4 +155,18 @@ function drawNodes(nodes) {
         ctx.fillStyle = fillStyle;
         ctx.fill();
     }
+}
+
+function removeDuplicates(originalArray, prop) {
+    var newArray = [];
+    var lookupObject  = {};
+
+    for(var i in originalArray) {
+       lookupObject[originalArray[i][prop]] = originalArray[i];
+    }
+
+    for(i in lookupObject) {
+        newArray.push(lookupObject[i]);
+    }
+     return newArray;
 }

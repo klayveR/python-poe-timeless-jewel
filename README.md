@@ -40,6 +40,8 @@ You can open `viewer.html` in your browser, select the `.json` files from the `r
 
 <img width="‭384‬" height="216" src="https://i.imgur.com/j5KhuyF.png">
 
+The `viewer_compact.html` works the same, but shows the new passives combined in a list.
+
 ### Tips
 - When capturing jewels
 	- Go into a town instead of your hideout
