@@ -128,6 +128,7 @@ def start(event):
             jewel["id"] = int(time.time())
             # Find nodes in radius, save node coordinates and type and capture passive text
             jewel["nodes"] = locateAllNodes()
+            return
             jewelDirectory = os.path.join(dirs["jewel"], str(jewel["id"]))
             captureTextFromNodes(jewel["nodes"], jewelDirectory)
             mouseMove(Location(100, 100))
@@ -419,7 +420,8 @@ def highlightNodes(nodes, type, color="cyan"):
     global cfg
 
     for n in nodes:
-        n["region"].highlightOn(color)
+        if type != "notable":
+            n["region"].highlightOn(color)
         n["region"].nearby(-(int(cfg["offsets"][type]) / 2)).highlightOn(color)
         n["region"].nearby(-int(cfg["offsets"][type])).highlightOn(color)
 
