@@ -277,7 +277,7 @@ def determineJewelSocket(passives):
             return { "name": socket["name"], "index": socketIndex }
         socketIndex += 1
 
-    return None
+    return { "name": "Unknown", "index": -1 }
 
 def analyzeJewels(jewelsDir):
     jewelIds = Helpers.getSubdirectories(jewelsDir)
