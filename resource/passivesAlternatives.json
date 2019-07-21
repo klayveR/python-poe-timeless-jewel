@@ -427,7 +427,7 @@
     }, 
     "Gemling Ambush": {
         "passives": [
-            "Supported Skills have 80% increased Spell Critical Strike Chance"
+            "80% increased Critical Strike Chance for Spells"
         ], 
         "type": "notable"
     }, 
@@ -890,7 +890,7 @@
     "Thaumaturgical Aptitude": {
         "passives": [
             "(25-35)% increased Spell Damage", 
-            "Supported Skills have (35-50)% increased Spell Critical Strike Chance"
+            "(35-50)% increased Critical Strike Chance for Spells"
         ], 
         "type": "notable"
     }, 

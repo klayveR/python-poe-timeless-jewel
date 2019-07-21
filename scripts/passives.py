@@ -83,6 +83,10 @@ for passive in data["data"]:
         mod = mod.replace("increased Minion Damage", "increased Damage")
         mod = "Minions deal " + mod
 
+    if "increased Minion Movement Speed" in mod:
+        mod = mod.replace("increased Minion Movement Speed", "increased Movement Speed")
+        mod = "Minions have " + mod
+
     if passive[0] == "Vaal":
         if not mod in vaalData:
             mod = mod.replace("1%", "(1-1)%")
@@ -140,6 +144,8 @@ for passive in data["data"]:
         m = m.replace("increased Effect of Curse", "increased Effect of your Curses")
         m = m.replace("increased Aura effect", "increased Effect of Non-Curse Auras from your Skills")
         m = m.replace("increased Aura Area of Effect", "increased Area of Effect of Aura Skills")
+        m = m.replace("Supported Skills have ", "")
+        m = m.replace("increased Spell Critical Strike Chance", "increased Critical Strike Chance for Spells")
         actualModsList.append(m)
 
     newData[name] = { "type": type, "passives": actualModsList }
