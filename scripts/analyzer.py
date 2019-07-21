@@ -72,7 +72,7 @@ def determinePassiveVariation(lines, variations):
     i = 0
     for variant in variations:
         passiveString = " ".join(variant)
-        score[i] += Levenshtein.ratio(passiveString, line)
+        score[i] += Levenshtein.ratio(passiveString.encode('ascii','ignore'), line.encode('ascii','ignore'))
         i += 1
 
     return variations[score.index(max(score))]
@@ -113,7 +113,7 @@ def replacePassiveValue(line, passive, acceptAny = False):
                 if value.is_integer():
                     value = int(value)
         passive = re.sub(valuePattern, str(value), passive)
-    
+
     return passive
 
 def getPassiveWithValue(lines, passive):
@@ -315,9 +315,10 @@ def analyzeJewels(jewelsDir):
         # Determine jewel socket
         result["socket"] = determineJewelSocket(result["nodes"])
 
-        #if jewelInfo["socket"]["index"] == -1:
-        #    print "\nWarning!\nThe jewel socket for this jewel couldn't be determined. Make sure every node in the jewel radius is fully visible when capturing.\n"
-        #    print "If you want to recapture this jewel, you have to delete " + os.path.join(dirs["jewelDone"], str(jewelId) + ".png")
+        if result["socket"]["index"] == -1:
+            donePath = os.path.join(dirs["jewelDone"], str(jewelId))
+            print "\nWarning!\nThe jewel socket for this jewel couldn't be determined. Make sure every node in the jewel radius is fully visible when capturing."
+            print "If you want to recapture this jewel, you have to delete " + donePath + ".json" + "and move " + donePath + ".png back into " + dirs["jewel"] + "\n"
 
         # Write jewels results to global var
         jewels[jewelId] = result
